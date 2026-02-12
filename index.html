@@ -81,14 +81,14 @@ body::before {
   font-size: 0.95em;
 }
 
-/* 💓 Latido MUY sutil */
+/* Latido */
 @keyframes heartbeat {
   0%   { transform: translate(-50%, -50%) scale(1); }
   50%  { transform: translate(-50%, -50%) scale(1.015); }
   100% { transform: translate(-50%, -50%) scale(1); }
 }
 
-/* ❤️ Corazones */
+/* Corazones */
 .heart {
   position: fixed;
   top: -30px;
@@ -174,12 +174,12 @@ window.onload = lanzarCorazones;
 btnNo.addEventListener("click", () => {
   noCount++;
 
-  /* FRASES EN ORDEN */
+  
   if (noCount <= phrases.length) {
     texto5.textContent = phrases[noCount - 1];
   }
 
-  /* CRECE DESDE EL PRIMER CLIC */
+  
   if (noCount <= 5) {
     btnYes.style.transform = `scale(${1 + noCount * 0.18})`;
     btnNo.style.transform = `scale(${1 - noCount * 0.12})`;
@@ -192,7 +192,7 @@ btnNo.addEventListener("click", () => {
     btnNo.style.transform = "scale(1)";
   }
 
-  /* CAMBIAN DE LUGAR */
+  /* LUGAR */
   else if (noCount === 7 && !swapped) {
     container.insertBefore(btnNo, btnYes);
     btnYes.style.transform = "scale(1)";
@@ -200,7 +200,7 @@ btnNo.addEventListener("click", () => {
     swapped = true;
   }
 
-  /* CRECIMIENTO MÁS NOTORIO */
+  /* CRECIMIENTO */
   else if (noCount > 7 && noCount < phrases.length) {
     let grow = 1 + (noCount - 7) * 0.22;
     btnYes.style.transform = `scale(${grow})`;
@@ -208,7 +208,7 @@ btnNo.addEventListener("click", () => {
     latidoSuave();
   }
 
-  /* 🦁 ÚLTIMA FRASE */
+  /* ÚLTIMA FRASE */
   if (noCount === phrases.length) {
     btnYes.style.transform = "scale(1)";
     btnNo.style.transform = "scale(1)";
